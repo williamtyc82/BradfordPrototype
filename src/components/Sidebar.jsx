@@ -7,7 +7,7 @@ const NAV_ITEMS = [
   { id: 'history',    icon: 'history',                  label: 'History'          },
 ];
 
-const Sidebar = ({ activeTab, onTabChange }) => {
+const Sidebar = ({ activeTab, onTabChange, onNewDeployment }) => {
   return (
     <aside className="flex flex-col h-screen w-72 bg-white border-r border-slate-200 shrink-0 sticky top-0 overflow-hidden">
 
@@ -80,11 +80,12 @@ const Sidebar = ({ activeTab, onTabChange }) => {
       {/* ── Footer ── */}
       <div className="px-4 pb-5 pt-4 space-y-4 border-t border-slate-100">
         <button
+          onClick={onNewDeployment}
           className="w-full bg-black text-white py-2.5 px-4 rounded-lg font-bold text-sm flex items-center justify-center gap-2 hover:bg-slate-800 active:scale-[0.98] transition-all cursor-pointer"
-          aria-label="Create new shipment"
+          aria-label="Create new deployment"
         >
           <span className="material-symbols-outlined shrink-0" style={{ fontSize: '16px' }}>add</span>
-          New Shipment
+          New Deployment
         </button>
 
         {/* User row */}

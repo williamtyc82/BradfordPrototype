@@ -33,7 +33,7 @@ const IntentEngine = ({ onGenerate, isGenerating }) => {
             Intent Engine
           </label>
           <button
-            onClick={() => setIntent('Need to move 4 tons of Heritage Pottery to the Northern Port. Requires fragile handling and a tail-lift vehicle for tomorrow 0800.')}
+            onClick={() => setIntent('Need to move a 3-ton Siemens Magnetom MRI Machine to City General Hospital. Requires cleanroom-grade transport, absolute vibration control, and climate regulation for tomorrow 0800.')}
             className="text-xs font-semibold text-blue-600 hover:text-blue-800 hover:underline transition-colors"
           >
             Try a Sample →

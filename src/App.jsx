@@ -7,6 +7,7 @@ import ReadyPanel from './components/ReadyPanel';
 import OperationsView from './components/OperationsView';
 import HistoryView from './components/HistoryView';
 import ResourcesView from './components/ResourcesView';
+import NewDeploymentModal from './components/NewDeploymentModal';
 
 const TAB_LABELS = {
   planning:   'Logistics Engine',
@@ -19,28 +20,29 @@ function App() {
   const [activeTab, setActiveTab] = useState('planning');
   const [workPlan, setWorkPlan] = useState(null);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isManualModalOpen, setIsManualModalOpen] = useState(false);
 
-  const handleGenerate = (intent) => {
+  const handleGenerate = () => {
     setIsGenerating(true);
     setTimeout(() => {
       setWorkPlan({
         job: {
-          cargo: 'Heritage Pottery',
-          weight: '4 Tons',
-          priority: 'HIGH',
-          destination: 'Northern Port',
+          cargo: 'Siemens Magnetom MRI',
+          weight: '3 Tons',
+          priority: 'CRITICAL',
+          destination: 'City General Hospital',
         },
         match: {
-          score: '98%',
-          specialist: 'Marcus Tan',
-          role: 'Lead Specialist',
-          tags: ['Class 4', 'Fragile Certified'],
-          note: 'System Note: Selection based on 12-month zero-damage record for pottery.',
+          score: '99%',
+          specialist: 'Sarah Jenkins',
+          role: 'Medical Logistics Chief',
+          tags: ['Class A Medical', 'Vibration Control', 'Climate Certified'],
+          note: 'System Note: Selection based on 40+ flawless high-cost medical equipment relocations.',
         },
         assets: [
-          { icon: 'rv_hookup',  title: '10-Ton Tail-lift',      sub: 'Vehicle Unit: VH-8821' },
-          { icon: 'shield',     title: 'Corner Protectors',     sub: 'Qty: 24 Industrial Units' },
-          { icon: 'air',        title: 'Air-Ride Suspension',   sub: 'Primary Shock Mitigation' },
+          { icon: 'rv_hookup',  title: 'Air-Ride Transport Trailer', sub: 'Vehicle Unit: MT-904X' },
+          { icon: 'thermostat', title: 'Climate Control Unit',       sub: 'Regulated to 20°C ± 1°C' },
+          { icon: 'sensors',    title: 'Vibration Sensors',          sub: 'Continuous Live Monitoring' },
         ],
       });
       setIsGenerating(false);
@@ -48,9 +50,12 @@ function App() {
   };
 
   return (
-    /* Root: fixed-height viewport, flex row, no overflow at this level */
     <div className="flex h-screen overflow-hidden bg-slate-50">
-      <Sidebar activeTab={activeTab} onTabChange={setActiveTab} />
+      <Sidebar 
+        activeTab={activeTab} 
+        onTabChange={setActiveTab} 
+        onNewDeployment={() => setIsManualModalOpen(true)}
+      />
 
       {/* Main: fills remaining width, scrolls independently */}
       <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
@@ -88,6 +93,10 @@ function App() {
           {activeTab === 'history'    && <HistoryView />}
         </main>
       </div>
+
+      {isManualModalOpen && (
+        <NewDeploymentModal onClose={() => setIsManualModalOpen(false)} />
+      )}
     </div>
   );
 }

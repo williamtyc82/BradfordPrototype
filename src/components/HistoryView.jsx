@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 
 const HISTORY = [
   {
-    id: 'DO-2037', date: '12 Apr 2026', time: '09:14', cargo: 'Heritage Pottery',
-    weight: '4 Tons', destination: 'Northern Port', worker: 'Marcus Tan',
-    vehicle: 'VH-8821', outcome: 'completed', aiScore: '98%',
-    duration: '3h 22m', notes: 'Zero-damage delivery. Client satisfaction: Excellent.',
+    id: 'DO-2037', date: '12 Apr 2026', time: '09:14', cargo: 'Siemens Magnetom MRI',
+    weight: '3 Tons', destination: 'City General Hospital', worker: 'Sarah Jenkins',
+    vehicle: 'VH-8821', outcome: 'completed', aiScore: '99%',
+    duration: '3h 22m', notes: 'Zero-damage delivery. Strict climate control maintained.',
   },
   {
-    id: 'DO-2036', date: '12 Apr 2026', time: '06:45', cargo: 'Refrigerated Seafood',
-    weight: '6.5 Tons', destination: 'Senoko Fish Market', worker: 'Priya Nair',
-    vehicle: 'VH-3304', outcome: 'completed', aiScore: '94%',
-    duration: '2h 08m', notes: 'Cold-chain maintained throughout. Slight delay at checkpoint.',
+    id: 'DO-2036', date: '12 Apr 2026', time: '06:45', cargo: 'Organ Transport Coolers',
+    weight: '0.5 Tons', destination: 'National Heart Centre', worker: 'Priya Nair',
+    vehicle: 'VH-3304', outcome: 'completed', aiScore: '98%',
+    duration: '2h 08m', notes: 'Cold-chain maintained at strict 2°C throughout. Immediate handover.',
   },
   {
-    id: 'DO-2035', date: '11 Apr 2026', time: '15:30', cargo: 'Automotive Parts',
-    weight: '9.2 Tons', destination: 'Sembawang Depot', worker: 'Ahmad Razif',
-    vehicle: 'VH-1102', outcome: 'completed', aiScore: '87%',
-    duration: '4h 55m', notes: 'Overtime incurred due to traffic. Parts delivered intact.',
+    id: 'DO-2035', date: '11 Apr 2026', time: '15:30', cargo: 'X-Ray Tube Assemblies',
+    weight: '1.2 Tons', destination: 'Sembawang ClinicHub', worker: 'Ahmad Razif',
+    vehicle: 'VH-1102', outcome: 'completed', aiScore: '89%',
+    duration: '4h 55m', notes: 'Overtime incurred due to traffic. High fragility parts delivered intact.',
   },
   {
     id: 'DO-2034', date: '11 Apr 2026', time: '08:00', cargo: 'Medical Oxygen Tanks',
@@ -26,22 +26,22 @@ const HISTORY = [
     duration: '5h 10m', notes: 'One tank rejected due to valve damage on arrival. Incident logged.',
   },
   {
-    id: 'DO-2033', date: '10 Apr 2026', time: '11:20', cargo: 'Paper Reams & Stationery',
-    weight: '1.4 Tons', destination: 'Paya Lebar Office Hub', worker: 'Siti Rahman',
+    id: 'DO-2033', date: '10 Apr 2026', time: '11:20', cargo: 'Surgical Sterilization Kits',
+    weight: '1.4 Tons', destination: 'Paya Lebar MedHub', worker: 'Siti Rahman',
     vehicle: 'VH-5500', outcome: 'completed', aiScore: '96%',
     duration: '1h 45m', notes: 'Text-book delivery. No issues.',
   },
   {
-    id: 'DO-2032', date: '10 Apr 2026', time: '07:00', cargo: 'Construction Timber',
-    weight: '18 Tons', destination: 'Queenstown Site 4B', worker: 'Ahmad Razif',
+    id: 'DO-2032', date: '10 Apr 2026', time: '07:00', cargo: 'CT Scanner Gantry',
+    weight: '5 Tons', destination: 'Queenstown Imaging Center', worker: 'Ahmad Razif',
     vehicle: 'VH-1102', outcome: 'failed', aiScore: '61%',
-    duration: '—', notes: 'Delivery aborted — site access denied. Cargo returned to depot.',
+    duration: '—', notes: 'Delivery aborted — site access denied due to structural assessment. Cargo returned.',
   },
   {
-    id: 'DO-2031', date: '09 Apr 2026', time: '14:00', cargo: 'IT Server Racks',
-    weight: '2.8 Tons', destination: 'One-North Data Centre', worker: 'Marcus Tan',
+    id: 'DO-2031', date: '09 Apr 2026', time: '14:00', cargo: 'Surgical Microscopy Systems',
+    weight: '0.8 Tons', destination: 'One-North BioCore', worker: 'Marcus Tan',
     vehicle: 'VH-8821', outcome: 'completed', aiScore: '99%',
-    duration: '2h 30m', notes: 'Highest-precision install. Client requested same team for next job.',
+    duration: '2h 30m', notes: 'Highest-precision install with laser alignment check included.',
   },
 ];
 
