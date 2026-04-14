@@ -8,6 +8,7 @@ import OperationsView from './components/OperationsView';
 import HistoryView from './components/HistoryView';
 import ResourcesView from './components/ResourcesView';
 import NewDeploymentModal from './components/NewDeploymentModal';
+import DeploymentOrderModal from './components/DeploymentOrderModal';
 
 const TAB_LABELS = {
   planning:   'Logistics Engine',
@@ -21,6 +22,7 @@ function App() {
   const [workPlan, setWorkPlan] = useState(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [isManualModalOpen, setIsManualModalOpen] = useState(false);
+  const [isDOModalOpen, setIsDOModalOpen] = useState(false);
 
   const handleGenerate = () => {
     setIsGenerating(true);
@@ -81,7 +83,7 @@ function App() {
               {workPlan && <AnalysisView plan={workPlan} />}
 
               {/* Ready Panel — always visible, disabled until plan exists */}
-              <ReadyPanel hasWorkPlan={!!workPlan} />
+              <ReadyPanel hasWorkPlan={!!workPlan} onConfirm={() => setIsDOModalOpen(true)} />
 
               {/* Bottom breathing room */}
               <div className="h-8" />
@@ -96,6 +98,10 @@ function App() {
 
       {isManualModalOpen && (
         <NewDeploymentModal onClose={() => setIsManualModalOpen(false)} />
+      )}
+
+      {isDOModalOpen && workPlan && (
+        <DeploymentOrderModal plan={workPlan} onClose={() => setIsDOModalOpen(false)} />
       )}
     </div>
   );
